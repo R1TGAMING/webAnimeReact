@@ -4,38 +4,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import GradientText from "../components/GradientText";
 import Squares from "../components/Squares";
-import Swipe from "../components/Swipe";
+import RecommendationsAnime from "../components/SwipeComponents/RecommendationsAnime";
 
 function Home(props) {
-  const [popularAnime, setPopularAnime] = useState();
-
-  useEffect(() => {
-    fetchPopularAnime();
-  }, []);
-
-  async function fetchPopularAnime() {
-    await axios
-      .get("https://api.jikan.moe/v4/recommendations/anime")
-      .then((res) => {
-        setPopularAnime(res.data.data[0]);
-
-        console.log(popularAnime);
-      });
-  }
-
   return (
     <div className="container mx-auto max-w-full">
       <NavBar />
-      <Squares direction="diagonal" speed={0.5} />
+      <div className="absolute -z-40 w-full h-96">
+        <Squares direction="diagonal" speed={0.5} squareSize={80} />
+      </div>
+
       {/* Header */}
-      <section className="text-center flex justify-center items-center gap-6  py-40 flex-col px-2">
+      <header className="text-center flex justify-center items-center gap-6  py-40 flex-col px-2">
         <GradientText
           colors={["#c9def4", "#d397fa", "#8364e8", "#b8a4c9"]}
           animationSpeed={3}
           showBorder={false}
           className="text-4xl font-extrabold"
         >
-          Watch Your Favorite Anime
+          <h2>Watch Your Favorite Anime</h2>
         </GradientText>
         <p className="italic">"No Anime No Life"</p>
         <div className="flex gap-6 font-bold">
@@ -46,6 +33,14 @@ function Home(props) {
             Learn More
           </button>
         </div>
+      </header>
+
+      {/* Recommendations Anime */}
+      <section className="">
+        <h2 className="pb-6 px-2 text-2xl font-black md:text-4xl">
+          Recommendations
+        </h2>
+        <RecommendationsAnime />
       </section>
     </div>
   );
