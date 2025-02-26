@@ -22,7 +22,8 @@ function Swipe({ children }) {
         }}
         pagination={false}
         modules={[Pagination]}
-        className=""
+        freeMode={true}
+        className="h-auto"
       >
         {children}
       </Swiper>

@@ -25,13 +25,14 @@ function RecommendationsAnime() {
       <Swipe>
         {recommendationsAnime.map((res, index) => {
           return (
-            <SwiperSlide key={index} className="">
-              <img
-                src={res.entry[0].images.jpg.large_image_url}
-                className="rounded object-cover w-64 h-64"
-              />
-              <p className="p-[5px] text-center">{res.entry[0].title}</p>
-            </SwiperSlide>
+            <>
+              <SwiperSlide key={index} className="cursor-pointer  ">
+                <img
+                  src={res.entry[0].images.jpg.large_image_url}
+                  className="rounded object-cover h-auto "
+                />
+              </SwiperSlide>
+            </>
           );
         })}
       </Swipe>
