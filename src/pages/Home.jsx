@@ -37,7 +37,7 @@ function Home(props) {
       </header>
 
       <section className="py-2 md:py-10">
-        <h2 className="pb-6 [text-shadow:_0_0px_3px_grey]  py-4 px-2 text-2xl font-black md:text-4xl">
+        <h2 className="pb-6 md:text-center [text-shadow:_0_0px_3px_grey]  py-4 px-2 text-2xl font-black md:text-4xl">
           Popular
         </h2>
         <PopularAnime />
@@ -45,7 +45,7 @@ function Home(props) {
 
       {/* Recommendations Anime */}
       <section className="py-2 md:py-10">
-        <h2 className="pb-6 px-2 text-2xl [text-shadow:_0_0px_3px_grey] font-black md:text-4xl">
+        <h2 className="pb-6 px-2 md:text-center text-2xl [text-shadow:_0_0px_3px_grey] font-black md:text-4xl">
           Recommendations
         </h2>
         <RecommendationsAnime />
