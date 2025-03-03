@@ -53,5 +53,4 @@ function PopularAnime() {
     </Swipe>
   );
 }
-
 export default PopularAnime;

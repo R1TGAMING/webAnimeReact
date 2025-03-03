@@ -59,5 +59,5 @@ function RecommendationsAnime() {
     </>
   );
 }
-console.log("s")
+
 export default RecommendationsAnime;
