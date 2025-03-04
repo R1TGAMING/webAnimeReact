@@ -38,21 +38,24 @@ function RecommendationsAnime() {
       <Swipe>
         {recommendationsAnime.map((res, index) => {
           return (
-            <>
-              <SwiperSlide key={index} className="cursor-pointer  ">
-                <a href={res.entry[0].mal_id}>
-                  {loading ? (
-                    <>Loading..</>
-                  ) : (
+            <SwiperSlide key={res.mal_id} className="cursor-pointer  p-2 ">
+              <a href={res.entry[0].mal_id}>
+                {loading ? (
+                  <>Loading..</>
+                ) : (
+                  <>
                     <img
                       src={res.entry[0].images.jpg.large_image_url}
-                      className="rounded object-cover h-auto "
+                      className="rounded object-cover"
                       onClick={() => navigateAnime(res.entry[0].mal_id)}
+                      alt={res.entry[0].title}
                     />
-                  )}
-                </a>
-              </SwiperSlide>
-            </>
+
+                    <p className="absolute bottom-2 bg-black bg-opacity-50 opacity-0 hover:opacity-100 w-auto max-w-[16vh] md:max-w-[21vh]">{res.entry[0].title}</p>
+                  </>
+                )}
+              </a>
+            </SwiperSlide>
           );
         })}
       </Swipe>

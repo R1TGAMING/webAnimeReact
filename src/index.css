@@ -16,6 +16,8 @@ body {
 
 .swiper .swiper-slide {
   height: auto;
+  
+
 }
 
 .swiper-slide img {
@@ -27,3 +29,9 @@ body {
   -webkit-mask-image: linear-gradient(black, transparent);
   mask-image: linear-gradient(black, transparent);
 }
+
+.mask2 {
+  -webkit-mask-image: linear-gradient(transparent, black);
+  mask-image: linear-gradient(transparent, black);
+}
+

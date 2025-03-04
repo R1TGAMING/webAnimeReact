@@ -35,19 +35,17 @@ function PopularAnime() {
     <Swipe>
       {popularAnime.map((res, index) => {
         return (
-          <>
-            <SwiperSlide key={index} className="cursor-pointer  ">
-              {loading ? (
-                <>Loading..</>
-              ) : (
-                <img
-                  src={res.images.jpg.large_image_url}
-                  className="rounded object-cover h-auto "
-                  onClick={() => navigateAnime(res.mal_id)}
-                />
-              )}
-            </SwiperSlide>
-          </>
+          <SwiperSlide key={res.mal_id} className="cursor-pointer p-2 ">
+            {loading ? (
+              <>Loading..</>
+            ) : (
+              <img
+                src={res.images.jpg.large_image_url}
+                className="rounded object-cover h-auto "
+                onClick={() => navigateAnime(res.mal_id)}
+              />
+            )}
+          </SwiperSlide>
         );
       })}
     </Swipe>
