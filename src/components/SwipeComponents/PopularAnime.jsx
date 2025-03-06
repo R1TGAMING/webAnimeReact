@@ -39,11 +39,14 @@ function PopularAnime() {
             {loading ? (
               <>Loading..</>
             ) : (
-              <img
-                src={res.images.jpg.large_image_url}
-                className="rounded object-cover h-auto "
-                onClick={() => navigateAnime(res.mal_id)}
-              />
+              <>
+                <img
+                  src={res.images.jpg.large_image_url}
+                  className="rounded h-[8rem] md:h-[20rem] sm:h-[12rem] w-auto "
+                  onClick={() => navigateAnime(res.mal_id)}
+                />
+                <p>{res.title}</p>
+              </>
             )}
           </SwiperSlide>
         );

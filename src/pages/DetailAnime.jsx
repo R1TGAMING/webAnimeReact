@@ -9,9 +9,14 @@ import {
   faRankingStar,
   faBookmark,
   faClock,
+  faHourglassEnd,
+  faTelevision,
 } from "@fortawesome/free-solid-svg-icons";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import Genres from "../components/Genres";
+import Swipe from "../components/Swipe";
+import RecommendationsAnime from "../components/SwipeComponents/RecommendationsAnime";
 
 function DetailAnime() {
   const { id } = useParams();
@@ -67,7 +72,7 @@ function DetailAnime() {
 
           <hr className="p-2"></hr>
 
-          <div className="flex flex-row gap-2 justify-start items-center">
+          <div className="flex flex-row flex-wrap gap-2 justify-start items-center">
             <FontAwesomeIcon icon={faClock} />
             <p>{anime.duration}</p>
             <FontAwesomeIcon icon={faStar} />
@@ -81,17 +86,61 @@ function DetailAnime() {
       </header>
 
       <section className="md:px-20 px-2 pt-10">
-      <p className="text-[15px]  text-center md:text-left">
-        {isReadMore ? anime.synopsis.slice(0, 200) : anime.synopsis}
-        <span
-          onClick={toggleReadMore}
-          className="cursor-pointer text-slate-500"
-        >
-          {isReadMore ? "...read more" : " show less"}
-        </span>
-      </p>
+        <h2 className="text-2xl font-black md:text-4xl pb-2 ">Synopsis</h2>
+        <p className="text-[15px]  text-left md:text-left ">
+          {isReadMore ? anime.synopsis.slice(0, 200) : anime.synopsis}
+          <span
+            onClick={toggleReadMore}
+            className="cursor-pointer  text-slate-500"
+          >
+            {isReadMore ? "...read more" : " show less"}
+          </span>
+        </p>
       </section>
-      
+
+      <section className="md:px-20 px-2 pt-10 flex flex-col">
+        <h2 className="text-2xl font-black md:text-4xl pb-5 text-left ">
+          Trailer
+        </h2>
+
+        {anime.trailer.embed_url !== null ? (
+          <iframe
+            src={anime.trailer.embed_url}
+            className=" rounded-lg justify-center w-full md:h-[100vh] sm:h-[50vh] h-full"
+          ></iframe>
+        ) : (
+          <p className="justify-center text-center mx-auto font-black text-2xl p-20 ">This Anime Doesn`t Have Trailer :(</p>
+        )}
+
+        <div className="flex items-center gap-2 py-2 font-bold justify-center flex-wrap">
+          <FontAwesomeIcon icon={faHourglassEnd} />
+          <p>{anime.status}</p>
+          <FontAwesomeIcon icon={faTelevision} />
+          <p>{anime.type}</p>
+          <p>Episodes : {anime.episodes}</p>
+        </div>
+      </section>
+
+      <section className="md:px-20 px-2 pt-10">
+        <h2 className="text-2xl font-black md:text-4xl pb-5 text-left ">
+          Genres
+        </h2>
+
+        <div className="flex gap-2 flex-wrap">
+          {anime.genres.map((res, index) => {
+            return <Genres key={res.mal_id}>{res.name}</Genres>;
+          })}
+        </div>
+      </section>
+
+      <section className="md:px-20 px-2 pt-10">
+      <h2 className="text-2xl font-black md:text-4xl pb-5 text-left ">
+          Recommended
+        </h2>
+        <Swipe>
+          <RecommendationsAnime />
+        </Swipe>
+      </section>
     </div>
   );
 }
