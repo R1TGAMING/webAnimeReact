@@ -14,7 +14,7 @@ function PopularAnime() {
   }, []);
 
   function navigateAnime(id) {
-    navigate(`anime/${id}`);
+    navigate(`/anime/${id}`);
   }
 
   async function fetchPopularAnime() {

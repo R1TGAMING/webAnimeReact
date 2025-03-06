@@ -109,7 +109,9 @@ function DetailAnime() {
             className=" rounded-lg justify-center w-full md:h-[100vh] sm:h-[50vh] h-full"
           ></iframe>
         ) : (
-          <p className="justify-center text-center mx-auto font-black text-2xl p-20 ">This Anime Doesn`t Have Trailer :(</p>
+          <p className="justify-center text-center mx-auto font-black text-2xl p-20 ">
+            This Anime Doesn`t Have Trailer :(
+          </p>
         )}
 
         <div className="flex items-center gap-2 py-2 font-bold justify-center flex-wrap">
@@ -134,12 +136,10 @@ function DetailAnime() {
       </section>
 
       <section className="md:px-20 px-2 pt-10">
-      <h2 className="text-2xl font-black md:text-4xl pb-5 text-left ">
+        <h2 className="text-2xl font-black md:text-4xl pb-5 text-left ">
           Recommended
         </h2>
-        <Swipe>
-          <RecommendationsAnime />
-        </Swipe>
+        <RecommendationsAnime />
       </section>
     </div>
   );

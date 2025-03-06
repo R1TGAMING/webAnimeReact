@@ -9,6 +9,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/anime/:id" element={<DetailAnime />} />
+        <Route path="/anime/search" element />
       </Routes>
     </Router>
   );

@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useState } from "react";
+import axios from "axios";
 
 function SearchAnime() {
-  return (
-    <div>SearchAnime</div>
-  )
+  const [searchAnime, setSearchAnime] = useState([])
+
+  async function searchAnime() {
+    try {
+      await axios.get('')
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  return <div>
+
+  </div>;
 }
 
-export default SearchAnime
+export default SearchAnime;

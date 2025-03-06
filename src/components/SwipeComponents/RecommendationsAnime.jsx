@@ -14,7 +14,7 @@ function RecommendationsAnime() {
   }, []);
 
   function navigateAnime(id) {
-    navigate(`anime/${id}`);
+    navigate(`/anime/${id}`);
   }
 
   async function fetchRecommendationsAnime() {
