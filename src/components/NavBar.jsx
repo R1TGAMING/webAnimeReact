@@ -7,11 +7,8 @@ function NavBar() {
   const [searchField, setSearchField] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  function handleSearch() {
-    setSearchField(!searchField);
-  }
 
-  function handleInput() {
+  function handleInput(event) {
     setInputValue(event.target.value);
   }
 
@@ -31,7 +28,7 @@ function NavBar() {
         <li className="flex gap-2 items-center">
           <input
             type="search"
-            className="  bg-slate-800 outline w-20 md:w-52 sm:w-52 outline-white brightness-50 rounded p-2  opacity-90"
+            className="  bg-slate-900 outline outline-slate-800 text-white w-20 md:w-52 sm:w-52  rounded p-2  "
             placeholder="Search.."
             value={inputValue}
             onChange={handleInput}

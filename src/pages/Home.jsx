@@ -50,6 +50,13 @@ function Home(props) {
         </h2>
         <RecommendationsAnime />
       </section>
+
+      {/* Footer */}
+      <footer>
+        <p className="text-center py-4 text-sm font-bold">
+          &copy; By ipii.
+        </p>
+      </footer>
     </div>
   );
 }
